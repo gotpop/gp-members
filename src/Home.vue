@@ -1,15 +1,18 @@
 <template>
   <div>
-    <h1>Sup G?</h1>
+    <h1>Welcome</h1>
+
+    <app-input></app-input>
   </div>
 </template>
 
 <script>
-// data() {
-//   return {
-//     msg: 'Welcome to Your Vue.js App'
-//   }
-// }
+import Input from './Input.vue'
+ export default {
+   components: {
+     'app-input': Input
+   }
+ }
 </script>
 
 
