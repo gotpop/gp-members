@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import Home from './home.vue'
+import Home from './Home.vue'
 
 Vue.component('gp-home', Home);
 
