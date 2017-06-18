@@ -2,6 +2,10 @@
 
 > A Vue.js members demo
 
+## Live
+
+https://gp-members.herokuapp.com/
+
 ## Build Setup
 
 ``` bash
