@@ -18,5 +18,5 @@ app.get('*', function(req, res) {
 });
 
 app.listen(port, function() {
-  console.log('GotPop members is running on http://localhost:' + port);
+  console.log('GotPop is running on http://localhost:' + port);
 });

@@ -6,16 +6,13 @@ let CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist',
-    filename: 'build.js'
+      filename: 'app.bundle.js',
+      path: __dirname + '/dist'
   },
   devServer: {
-    publicPath: '/dist',
-    port: 2222,
-    watchContentBase: true,
-    historyApiFallback: true,
-    noInfo: true
+      contentBase: path.join(__dirname, "/dist/"),
+      port: 9000,
+      watchContentBase: true
   },
   module: {
     rules: [
@@ -59,11 +56,11 @@ module.exports = {
   plugins: [
         new HtmlWebpackPlugin({
           title: 'GotPop',
-          template: 'index.html',
+          template: './index.ejs',
           favicon: "./favicon.ico",
-          inject: 'head'
-        }),
-        new CleanWebpackPlugin(['dist'])
+          inject: 'footer'
+        })
+        // new CleanWebpackPlugin(['dist'])
     ],
   performance: {
     hints: false
