@@ -12,8 +12,8 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, "/dist/"),
-    // port: 2222,
-    // watchContentBase: true,
+    port: 2222,
+    watchContentBase: true,
     historyApiFallback: true,
     noInfo: true
   },
@@ -56,41 +56,41 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
-  plugins: [
-        new HtmlWebpackPlugin({
-            title: 'GotPop',
-            template: './src/index.html',
-            inject: 'head'
-        })
-    ],
+  // plugins: [
+  //       new HtmlWebpackPlugin({
+  //           title: 'GotPop',
+  //           template: '../index.html',
+  //           inject: 'head'
+  //       })
+  //   ],
   performance: {
     hints: false
   },
   devtool: '#eval-source-map'
 }
 
-// if (process.env.NODE_ENV === 'production') {
-//   module.exports.devtool = '#source-map'
-//   // http://vue-loader.vuejs.org/en/workflow/production.html
-//   module.exports.plugins = (module.exports.plugins || []).concat([
-//     new webpack.DefinePlugin({
-//       'process.env': {
-//         NODE_ENV: '"production"'
-//       }
-//     }),
-//     new webpack.optimize.UglifyJsPlugin({
-//       sourceMap: true,
-//       compress: {
-//         warnings: false
-//       }
-//     }),
-//     new webpack.LoaderOptionsPlugin({
-//       minimize: true
-//     }),
-//     new HtmlWebpackPlugin({
-//         title: 'GotPop',
-//         template: './src/index.html',
-//         inject: 'head'
-//     })
-//   ])
-// }
+if (process.env.NODE_ENV === 'production') {
+  module.exports.devtool = '#source-map'
+  // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    }),
+    new HtmlWebpackPlugin({
+        title: 'GotPop',
+        template: './index.html',
+        inject: 'head'
+    })
+  ])
+}
