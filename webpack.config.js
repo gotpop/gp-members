@@ -59,8 +59,8 @@ module.exports = {
           template: './src/index.ejs',
           favicon: "./src/favicon.ico",
           inject: 'footer'
-        })
-        // new CleanWebpackPlugin(['dist'])
+        }),
+        new CleanWebpackPlugin(['dist'])
     ],
   performance: {
     hints: false
