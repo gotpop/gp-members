@@ -82,6 +82,11 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
+    }),
+    new HtmlWebpackPlugin({
+        title: 'GotPop',
+        template: './src/index.html',
+        inject: 'head'
     })
   ])
 }
