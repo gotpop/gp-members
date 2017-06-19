@@ -17,6 +17,10 @@ import Input from './Input.vue'
 
 
 <style lang="scss">
+
+// @import '~bulma';
+
+
 #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     text-align: center;

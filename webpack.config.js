@@ -1,5 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
+let HtmlWebpackPlugin = require('html-webpack-plugin')
+let CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
@@ -7,6 +9,13 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
     filename: 'build.js'
+  },
+  devServer: {
+    contentBase: path.join(__dirname, "/dist/"),
+    port: 2222,
+    watchContentBase: true,
+    historyApiFallback: true,
+    noInfo: true
   },
   module: {
     rules: [
@@ -43,10 +52,13 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: true
-  },
+  plugins: [
+        new HtmlWebpackPlugin({
+            title: 'GotPop',
+            template: './src/index.html',
+            inject: 'head'
+        })
+    ],
   performance: {
     hints: false
   },

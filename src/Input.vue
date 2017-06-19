@@ -1,17 +1,31 @@
 <template>
-  <div>
-    <input type="text" v-model="message">
-    <p>{{message}}</p>
-  </div>
+<div>
+  <input type="text" v-model="message">
+  <p>{{message}}</p>
+  <div class="columns">
+        <div class="column">
+          <p class="notification is-info">First column</p>
+        </div>
+        <div class="column">
+          <p class="notification is-success">Second column</p>
+        </div>
+        <div class="column">
+          <p class="notification is-warning">Third column</p>
+        </div>
+        <div class="column">
+          <p class="notification is-danger">Fourth column</p>
+        </div>
+    </div>
+</div>
 </template>
 
 
 <script>
-  export default {
-    data() {
-      return {
-        message: ''
-      }
+export default {
+  data() {
+    return {
+      message: ''
     }
   }
+}
 </script>
