@@ -7,11 +7,11 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: '/dist',
     filename: 'build.js'
   },
   devServer: {
-    contentBase: path.join(__dirname, "/dist/"),
+    publicPath: '/dist',
     port: 2222,
     watchContentBase: true,
     historyApiFallback: true,
@@ -56,13 +56,14 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
-  // plugins: [
-  //       new HtmlWebpackPlugin({
-  //           title: 'GotPop',
-  //           template: '../index.html',
-  //           inject: 'head'
-  //       })
-  //   ],
+  plugins: [
+        new HtmlWebpackPlugin({
+          title: 'GotPop',
+          template: 'index.html',
+          inject: 'head'
+        }),
+        new CleanWebpackPlugin(['dist'])
+    ],
   performance: {
     hints: false
   },
@@ -86,11 +87,6 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    }),
-    new HtmlWebpackPlugin({
-        title: 'GotPop',
-        template: './index.html',
-        inject: 'head'
     })
   ])
 }
