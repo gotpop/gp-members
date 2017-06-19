@@ -56,8 +56,8 @@ module.exports = {
   plugins: [
         new HtmlWebpackPlugin({
           title: 'GotPop',
-          template: './index.ejs',
-          favicon: "./favicon.ico",
+          template: './src/index.ejs',
+          favicon: "./src/favicon.ico",
           inject: 'footer'
         })
         // new CleanWebpackPlugin(['dist'])
