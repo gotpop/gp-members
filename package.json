@@ -10,7 +10,7 @@
     "open": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "deploy": "git add . && git commit -m 'Setup' && git push origin master",
-    "postinstall": "webpack"
+    "postinstall": "webpack && ls"
   },
   "dependencies": {
     "babel-core": "^6.0.0",
