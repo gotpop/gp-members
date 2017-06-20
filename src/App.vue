@@ -1,15 +1,10 @@
 <template>
   <div class="wrap-site">
     <gp-header></gp-header>
-    <gp-hero></gp-hero>
-    <gp-home></gp-home>
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-
-</script>
-
 <style lang="scss">
-
+  @import '~bulma';
 </style>

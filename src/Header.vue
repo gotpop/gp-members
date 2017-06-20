@@ -4,10 +4,11 @@
     <nav class="nav has-shadow">
       <div class="container">
         <div class="nav-left">
-          <a class="nav-item is-tab is-hidden-mobile is-active">Home</a>
-          <a class="nav-item is-tab is-hidden-mobile">Features</a>
-          <a class="nav-item is-tab is-hidden-mobile">Pricing</a>
-          <a class="nav-item is-tab is-hidden-mobile">About</a>
+          <router-link to="/" class="nav-item is-tab is-hidden-mobile is-active">Home</router-link>
+          <router-link to="/step1" class="nav-item is-tab is-hidden-mobile">Step 1</router-link>
+          <router-link to="/step2" class="nav-item is-tab is-hidden-mobile">Step 2</router-link>
+          <router-link to="/step3" class="nav-item is-tab is-hidden-mobile">Step 3</router-link>
+          <router-link to="/summary" class="nav-item is-tab is-hidden-mobile">Summary</router-link>
         </div>
         <span class="nav-toggle">
             <span></span>

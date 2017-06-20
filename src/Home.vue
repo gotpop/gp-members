@@ -30,12 +30,3 @@ import Input from './Input.vue'
    }
  }
 </script>
-
-
-<style lang="scss">
-
-@import '~bulma';
-
-
-
-</style>
