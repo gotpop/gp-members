@@ -28,7 +28,7 @@ const router =  new VueRouter({
 Vue.component('gp-header', Header);
 Vue.component('gp-hero', Hero);
 
-new Vue({
+let gp = new Vue({
   el: '#app',
   router,
   render: h => h(App)

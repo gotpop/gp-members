@@ -4,7 +4,7 @@
     <div class="container">
       <div class="columns">
         <div class="column">
-          <p class="notification is-info">Step 1</p>
+          <progress class="progress is-primary" value="33" max="100">30%</progress>
         </div>
       </div>
     </div>
@@ -15,16 +15,12 @@
       <div class="columns">
         <div class="column">
 
-
-          <h1>{{greeting}}</h1>
-          <a v-on:click="gpSubmit" class="button">Try this!</a>
-
           <form  @submit.prevent id="formoid" method="post">
 
             <div class="field">
               <label class="label">Name</label>
               <p class="control">
-                <input class="input" type="text" placeholder="Text input" v-model="name">
+                <input class="input" type="text" placeholder="Text input" v-model="user.name">
                 <p>{{name}}</p>
               </p>
             </div>
@@ -32,7 +28,7 @@
             <div class="field">
               <label class="label">Username</label>
               <p class="control has-icons-left has-icons-right">
-                <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+                <input class="input is-success" type="text" placeholder="Text input" value="bulma" v-model="user.surname">
                 <span class="icon is-small is-left">
                   <i class="fa fa-user"></i>
                 </span>
@@ -46,7 +42,7 @@
             <div class="field">
               <label class="label">Email</label>
               <p class="control has-icons-left has-icons-right">
-                <input class="input is-danger" type="text" placeholder="Email input" value="hello@">
+                <input class="input is-danger" type="text" placeholder="Email input" value="hello@" v-model="user.email">
                 <span class="icon is-small is-left">
                   <i class="fa fa-envelope"></i>
                 </span>
@@ -59,10 +55,7 @@
 
             <div class="field is-grouped">
               <p class="control">
-                <button  v-on:click="gpSubmit" class="button is-primary">Submit</button>
-              </p>
-              <p class="control">
-                <button class="button is-link">Cancel</button>
+                <button  v-on:click="gpSubmit" class="button is-primary">Continue</button>
               </p>
             </div>
 
@@ -80,14 +73,15 @@ export default {
   data() {
     return {
       greeting: 'hello',
-      name: ''
+      name: '',
+      user: {
 
+      }
     }
   },
   methods: {
     gpSubmit: function() {
-      console.log('Submitted a kebab');
-      console.log(this);
+      console.log('User: ', this.user);
     }
   }
 }

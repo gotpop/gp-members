@@ -2,7 +2,7 @@
 <nav class="nav has-shadow">
   <div class="container">
     <div class="nav-left">
-      <router-link to="/" class="nav-item is-tab is-hidden-mobile is-active">Home</router-link>
+      <router-link to="/" class="nav-item is-tab is-hidden-mobile">Home</router-link>
       <router-link to="/step1" class="nav-item is-tab is-hidden-mobile">Step 1</router-link>
       <router-link to="/step2" class="nav-item is-tab is-hidden-mobile">Step 2</router-link>
       <router-link to="/step3" class="nav-item is-tab is-hidden-mobile">Step 3</router-link>

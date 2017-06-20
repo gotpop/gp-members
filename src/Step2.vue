@@ -4,10 +4,9 @@
 
     <div class="columns">
       <div class="column">
-        <p class="notification is-info">Step 2</p>
+        <progress class="progress is-primary" value="66" max="100">30%</progress>
       </div>
-  </div>
     </div>
+  </div>
 </section>
-
 </template>
