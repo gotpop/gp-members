@@ -1,5 +1,7 @@
 <template>
-  <div id="app">
+  <div class="wrap-site">
+    <gp-header></gp-header>
+    <gp-hero></gp-hero>
     <gp-home></gp-home>
   </div>
 </template>
