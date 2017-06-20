@@ -15,7 +15,10 @@
     </div>
   </section>
   <section class="section">
-    <a class="button is-primary">Join</a>
+    <div class="container">
+
+      <router-link to="/step1" class="button is-primary">Join</router-link>
+    </div>
   </section>
 
 </div>
