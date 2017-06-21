@@ -1,6 +1,5 @@
 <template>
-
-  <div>
+<div>
 
   <section class="hero is-medium is-primary is-bold">
     <div class="hero-body">
@@ -9,7 +8,7 @@
           GotPop Members
         </h1>
         <h2 class="subtitle">
-          A Vue.js demonstration of of a multi step registration process.
+          A Vue.js demonstration of a multi step registration process.
         </h2>
       </div>
     </div>
@@ -18,16 +17,14 @@
     <div class="container">
 
       <router-link to="/step1" class="button is-primary is-large">
-        <div class="nav-right nav-menu">
-          <span class="icon">
-      <i class="fa fa-home"></i>
-    </span>
-    <span>Join</span>
-  </div>
-  </router-link>
+        <span class="icon">
+          <i class="fa fa-home"></i>
+        </span>
+        <span>Join</span>
+      </router-link>
+
     </div>
   </section>
 
 </div>
-
 </template>

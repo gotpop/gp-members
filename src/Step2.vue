@@ -37,7 +37,12 @@
 
           <div class="field">
             <p class="control">
-            <router-link to="/step3" v-on:click="gpSubmit" class="button is-primary">Continue</router-link>
+              <router-link v-on:click="gpSubmit" to="/step3"  class="button is-primary is-large">
+                <span class="icon">
+                  <i class="fa fa-home"></i>
+                </span>
+                <span>Continue</span>
+              </router-link>
             </p>
           </div>
 

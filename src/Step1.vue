@@ -39,7 +39,13 @@
 
             <div class="field">
               <p class="control">
-                  <router-link to="/step2" v-on:click="gpSubmit" class="button is-primary">Continue</router-link>
+
+                  <router-link v-on:click="gpSubmit" to="/step2"  class="button is-primary is-large">
+                    <span class="icon">
+                      <i class="fa fa-home"></i>
+                    </span>
+                    <span>Continue</span>
+                  </router-link>
               </p>
             </div>
 
@@ -70,7 +76,7 @@ export default {
   },
   methods: {
     gpSubmit: function() {
-      console.log('User: ', this.$store.state.userStore.name );
+      console.log('User: ', this.userStore.name );
     }
   }
 }
