@@ -39,7 +39,7 @@
 
             <div class="field">
               <p class="control">
-                <button  v-on:click="gpSubmit" class="button is-primary">Continue</button>
+                  <router-link to="/step2" v-on:click="gpSubmit" class="button is-primary">Continue</router-link>
               </p>
             </div>
 
