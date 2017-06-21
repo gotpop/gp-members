@@ -20,7 +20,7 @@
             <p class="control">
               <span class="select">
                 <select v-model="userStore.list">
-                  <option v-for="contactTypes in contactTypes">{{ person.contactType }}</option>
+                  <option v-for="type in contactTypes">{{ type.contactType }}</option>
                 </select>
               </span>
             </p>
