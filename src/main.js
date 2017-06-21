@@ -9,6 +9,8 @@ import Step2 from './Step2.vue'
 import Step3 from './Step3.vue'
 import Summary from './Summary.vue'
 
+import {store} from './store'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,7 +22,7 @@ const routes = [
 ]
 
 const router =  new VueRouter({
-  routes
+  routes,
   // routes,
   // mode: 'history'
 })
@@ -31,5 +33,6 @@ Vue.component('gp-hero', Hero);
 let gp = new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App)
 })

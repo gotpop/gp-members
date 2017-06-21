@@ -1,6 +1,7 @@
 <template>
-<div>
+
   <section class="section">
+
     <div class="container">
       <div class="columns">
         <div class="column">
@@ -8,9 +9,7 @@
         </div>
       </div>
     </div>
-  </section>
 
-  <section class="section">
     <div class="container">
       <div class="columns">
         <div class="column">
@@ -20,40 +19,25 @@
             <div class="field">
               <label class="label">Name</label>
               <p class="control">
-                <input class="input" type="text" placeholder="Text input" v-model="user.name">
-                <p>{{name}}</p>
+                <input class="input" type="text" placeholder="Text input" v-model="userStore.name">
               </p>
             </div>
 
             <div class="field">
               <label class="label">Username</label>
-              <p class="control has-icons-left has-icons-right">
-                <input class="input is-success" type="text" placeholder="Text input" value="bulma" v-model="user.surname">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-user"></i>
-                </span>
-                <span class="icon is-small is-right">
-                  <i class="fa fa-check"></i>
-                </span>
+              <p class="control">
+                <input class="input" type="text" placeholder="Text input" value="bulma" v-model="userStore.surname">
               </p>
-              <p class="help is-success">This username is available</p>
             </div>
 
             <div class="field">
               <label class="label">Email</label>
-              <p class="control has-icons-left has-icons-right">
-                <input class="input is-danger" type="text" placeholder="Email input" value="hello@" v-model="user.email">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-envelope"></i>
-                </span>
-                <span class="icon is-small is-right">
-                  <i class="fa fa-warning"></i>
-                </span>
+              <p class="control">
+                <input class="input" type="text" placeholder="Email input" value="hello@" v-model="userStore.email">
               </p>
-              <p class="help is-danger">This email is invalid</p>
             </div>
 
-            <div class="field is-grouped">
+            <div class="field">
               <p class="control">
                 <button  v-on:click="gpSubmit" class="button is-primary">Continue</button>
               </p>
@@ -64,24 +48,29 @@
         </div>
       </div>
     </div>
+
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          {{userStore}}
+        </div>
+      </div>
+    </div>
+
   </section>
-</div>
+
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      greeting: 'hello',
-      name: '',
-      user: {
-
-      }
+  computed: {
+    userStore() {
+      return this.$store.state.userStore
     }
   },
   methods: {
     gpSubmit: function() {
-      console.log('User: ', this.user);
+      console.log('User: ', this.$store.state.userStore.name );
     }
   }
 }
