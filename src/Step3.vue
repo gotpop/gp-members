@@ -20,7 +20,7 @@
             <p class="control">
               <span class="select">
                 <select v-model="userStore.list">
-                  <option v-for="person in persons">{{ person.name }}</option>
+                  <option v-for="person in persons">{{ person.contactType }}</option>
                 </select>
               </span>
             </p>
@@ -28,12 +28,12 @@
 
           <div class="field">
             <p class="control">
-              <router-link v-on:click="gpSubmit" to="/summary"  class="button is-primary is-large">
+              <button v-on:click="gpSubmit" class="button is-primary is-large">
                 <span class="icon">
                   <i class="fa fa-home"></i>
                 </span>
                 <span>Continue</span>
-              </router-link>
+              </button>
             </p>
           </div>
 
@@ -61,9 +61,9 @@ export default {
   data() {
     return {
       persons: [
-        {name: 'Max', age: 27},
-        {name: 'Chris', age: 30},
-        {name: 'Nora', age: 25}
+        {contactType: 'Contact by email'},
+        {contactType: 'Contact by post'},
+        {contactType: 'Contact in person',}
       ]
     }
   },
@@ -74,7 +74,16 @@ export default {
   },
   methods: {
     gpSubmit: function() {
-      console.log('User: ', this.$store.state.userStore.list );
+
+
+      fetch("api/user", {
+        method: "POST",
+        body: 'formy'
+      });
+
+
+      console.log('User: ', this.userStore );
+      this.$router.push('summary')
     }
   }
 }

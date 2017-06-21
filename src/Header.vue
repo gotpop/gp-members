@@ -2,10 +2,12 @@
 <nav class="nav has-shadow">
   <div class="container">
     <div class="nav-left">
-      <span class="icon">
-    <i class="fa fa-star"></i>
-    </span>
-      <router-link to="/" class="nav-item is-tab is-hidden-mobile">Home</router-link>
+      <router-link to="/" class="nav-item is-tab is-hidden-mobile">
+        <span class="icon">
+        <i class="fa fa-star"></i>
+        </span>
+        <span>Home</span>
+      </router-link>
       <router-link to="/step1" class="nav-item is-tab is-hidden-mobile">Step 1</router-link>
       <router-link to="/step2" class="nav-item is-tab is-hidden-mobile">Step 2</router-link>
       <router-link to="/step3" class="nav-item is-tab is-hidden-mobile">Step 3</router-link>
@@ -26,7 +28,7 @@
         <span class="icon">
       <i class="fa fa-star"></i>
       </span>
-      <span>GitHub</span>
+        <span>GitHub</span>
       </a>
     </div>
   </div>

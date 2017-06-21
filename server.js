@@ -17,7 +17,7 @@ app.get('*', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
-app.post('/api/user', function(req, res) {
+app.post('/#/api/user', function(req, res) {
 	res.send("Endpoint working");
 });
 

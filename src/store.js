@@ -6,13 +6,13 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
   state: {
     userStore: {
-      name: 'nodata',
-      surname: 'nodata',
-      email: 'nodata',
-      address1: 'nodata',
-      address2: 'nodata',
-      postcode: 'nodata',
-      list: 'nodata'
+      name: '',
+      surname: '',
+      email: '',
+      address1: '',
+      address2: '',
+      postcode: '',
+      list: ''
     }
   }
 })

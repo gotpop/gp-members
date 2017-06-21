@@ -17,32 +17,32 @@
           <div class="field">
             <label class="label">Address</label>
             <p class="control">
-              <input class="input" type="text" placeholder="Text input" v-model="userStore.address1">
+              <input class="input" type="text" placeholder="10 Sample House" v-model="userStore.address1">
             </p>
           </div>
 
           <div class="field">
             <label class="label">Address</label>
             <p class="control">
-              <input class="input" type="text" placeholder="Text input" value="bulma" v-model="userStore.address2">
+              <input class="input" type="text" placeholder="Sample street" v-model="userStore.address2">
             </p>
           </div>
 
           <div class="field">
             <label class="label">Postcode</label>
             <p class="control">
-              <input class="input" type="text" placeholder="Email input" value="hello@" v-model="userStore.postcode">
+              <input class="input" type="text" placeholder="N1 5DS" v-model="userStore.postcode">
             </p>
           </div>
 
           <div class="field">
             <p class="control">
-              <router-link v-on:click="gpSubmit" to="/step3"  class="button is-primary is-large">
+              <button v-on:click="gpSubmit" class="button is-primary is-large">
                 <span class="icon">
                   <i class="fa fa-home"></i>
                 </span>
                 <span>Continue</span>
-              </router-link>
+              </button>
             </p>
           </div>
 
@@ -71,7 +71,8 @@ export default {
   },
   methods: {
     gpSubmit: function() {
-      console.log('User: ', this.$store.state.userStore.name);
+      console.log('User: ', this.userStore );
+      this.$router.push('step3')
     }
   }
 }
