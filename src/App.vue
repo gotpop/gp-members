@@ -15,10 +15,3 @@ a.nav-item.is-tab.router-link-exact-active {
     padding-bottom: calc(0.75rem - 3px);
 }
 </style>
-
-
-<script>
-export default {
-  props: ['Icon']
-}
-</script>

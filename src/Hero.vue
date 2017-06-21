@@ -6,10 +6,10 @@
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
-          Primary bold title
+          GotPop Members
         </h1>
         <h2 class="subtitle">
-          Primary bold subtitle
+          A Vue.js demonstration of of a multi step registration process.
         </h2>
       </div>
     </div>
