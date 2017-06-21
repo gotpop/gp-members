@@ -11,6 +11,8 @@ import Summary from './Summary.vue'
 
 import {store} from './store'
 
+import Icon from './icons'
+
 Vue.use(VueRouter)
 
 const routes = [

@@ -17,6 +17,10 @@ app.get('*', function(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
+app.post('/api/user', function(req, res) {
+	res.send("Endpoint working");
+});
+
 app.listen(port, function() {
   console.log('GotPop is running on http://localhost:' + port);
 });
