@@ -12,32 +12,32 @@
     <div class="columns">
       <div class="column">
 
-        <form  @submit.prevent id="formoid" method="post">
+        <form @submit.prevent id="formoid" method="post">
 
           <div class="field">
-            <label class="label">Name</label>
+            <label class="label">Address</label>
             <p class="control">
-              <input class="input" type="text" placeholder="Text input" v-model="userStore.name">
+              <input class="input" type="text" placeholder="Text input" v-model="userStore.address1">
             </p>
           </div>
 
           <div class="field">
-            <label class="label">Username</label>
+            <label class="label">Address</label>
             <p class="control">
-              <input class="input" type="text" placeholder="Text input" value="bulma" v-model="userStore.surname">
+              <input class="input" type="text" placeholder="Text input" value="bulma" v-model="userStore.address2">
             </p>
           </div>
 
           <div class="field">
-            <label class="label">Email</label>
+            <label class="label">Postcode</label>
             <p class="control">
-              <input class="input" type="text" placeholder="Email input" value="hello@" v-model="userStore.email">
+              <input class="input" type="text" placeholder="Email input" value="hello@" v-model="userStore.postcode">
             </p>
           </div>
 
           <div class="field">
             <p class="control">
-              <button  v-on:click="gpSubmit" class="button is-primary">Continue</button>
+              <button v-on:click="gpSubmit" class="button is-primary">Continue</button>
             </p>
           </div>
 
@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     gpSubmit: function() {
-      console.log('User: ', this.$store.state.userStore.name );
+      console.log('User: ', this.$store.state.userStore.name);
     }
   }
 }

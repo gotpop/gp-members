@@ -8,7 +8,10 @@ export const store = new Vuex.Store({
     userStore: {
       name: 'nodata',
       surname: 'nodata',
-      email: 'nodata'
+      email: 'nodata',
+      address1: 'nodata',
+      address2: 'nodata',
+      postcode: 'nodata'
     }
   }
 })
