@@ -19,6 +19,7 @@ app.get('*', function(req, res) {
 
 app.post('/api/user', function(req, res) {
 	res.send("Endpoint working !!");
+  console.log(req.body);
 });
 
 app.listen(port, function() {
