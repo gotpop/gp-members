@@ -79,16 +79,14 @@ export default {
   methods: {
     gpSubmit: function() {
 
-
       fetch("api/user", {
         method: "POST",
-        body: 'formy'
+        body: 'this.userStore'
       }).then(function(response) {
         return response.text().then(function(text) {
           console.log(text);
         });
       });
-
 
       console.log('User: ', this.userStore);
       this.$router.push('summary')
