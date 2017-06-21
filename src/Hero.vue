@@ -17,7 +17,14 @@
   <section class="section">
     <div class="container">
 
-      <router-link to="/step1" class="button is-primary">Join</router-link>
+      <router-link to="/step1" class="button is-primary is-large">
+        <div class="nav-right nav-menu">
+          <span class="icon">
+      <i class="fa fa-home"></i>
+    </span>
+    <span>Join</span>
+  </div>
+  </router-link>
     </div>
   </section>
 

@@ -8,10 +8,7 @@ import Step1 from './Step1.vue'
 import Step2 from './Step2.vue'
 import Step3 from './Step3.vue'
 import Summary from './Summary.vue'
-
 import {store} from './store'
-
-import Icon from './icons'
 
 Vue.use(VueRouter)
 

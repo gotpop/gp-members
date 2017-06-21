@@ -16,23 +16,13 @@
         <form  @submit.prevent id="formoid" method="post">
 
           <div class="field">
-            <label class="label">Name</label>
+            <label class="label">Subject</label>
             <p class="control">
-              <input class="input" type="text" placeholder="Text input" v-model="userStore.name">
-            </p>
-          </div>
-
-          <div class="field">
-            <label class="label">Username</label>
-            <p class="control">
-              <input class="input" type="text" placeholder="Text input" value="bulma" v-model="userStore.surname">
-            </p>
-          </div>
-
-          <div class="field">
-            <label class="label">Email</label>
-            <p class="control">
-              <input class="input" type="text" placeholder="Email input" value="hello@" v-model="userStore.email">
+              <span class="select">
+                <select v-model="userStore.list">
+                  <option v-for="person in persons">{{ person.name }}</option>
+                </select>
+              </span>
             </p>
           </div>
 
@@ -41,6 +31,7 @@
               <router-link to="/summary" v-on:click="gpSubmit" class="button is-primary">Continue</router-link>
             </p>
           </div>
+
 
         </form>
 
@@ -62,6 +53,15 @@
 
 <script>
 export default {
+  data() {
+    return {
+      persons: [
+        {name: 'Max', age: 27},
+        {name: 'Chris', age: 30},
+        {name: 'Nora', age: 25}
+      ]
+    }
+  },
   computed: {
     userStore() {
       return this.$store.state.userStore
@@ -69,7 +69,7 @@ export default {
   },
   methods: {
     gpSubmit: function() {
-      console.log('User: ', this.$store.state.userStore.name );
+      console.log('User: ', this.$store.state.userStore.list );
     }
   }
 }

@@ -11,7 +11,8 @@ export const store = new Vuex.Store({
       email: 'nodata',
       address1: 'nodata',
       address2: 'nodata',
-      postcode: 'nodata'
+      postcode: 'nodata',
+      list: 'nodata'
     }
   }
 })
