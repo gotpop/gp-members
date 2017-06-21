@@ -6,14 +6,14 @@
       <div class="column">
         <progress class="progress is-primary" value="100" max="100">30%</progress>
       </div>
-  </div>
+    </div>
   </div>
 
   <div class="container">
     <div class="columns">
       <div class="column">
 
-        <form  @submit.prevent id="formoid" method="post">
+        <form @submit.prevent id="formoid" method="post">
 
           <div class="field">
             <label class="label">Subject</label>
@@ -52,7 +52,6 @@
     </div>
   </div>
 </section>
-
 </template>
 
 
@@ -60,10 +59,15 @@
 export default {
   data() {
     return {
-      persons: [
-        {contactType: 'Contact by email'},
-        {contactType: 'Contact by post'},
-        {contactType: 'Contact in person',}
+      persons: [{
+          contactType: 'Contact by email'
+        },
+        {
+          contactType: 'Contact by post'
+        },
+        {
+          contactType: 'Contact in person',
+        }
       ]
     }
   },
@@ -79,10 +83,14 @@ export default {
       fetch("api/user", {
         method: "POST",
         body: 'formy'
+      }).then(function(response) {
+        return response.text().then(function(text) {
+          console.log(text);
+        });
       });
 
 
-      console.log('User: ', this.userStore );
+      console.log('User: ', this.userStore);
       this.$router.push('summary')
     }
   }
