@@ -19,7 +19,7 @@
           <div class="field">
             <label class="label">Name</label>
             <p class="control">
-              <input v-validate="'required'" class="input" type="text" placeholder="Jane" v-model="userStore.name" name="name">
+              <input v-validate="'required'" class="input" type="text" placeholder="Jane" v-model="userStore.name" name="name" autofocus>
             </p>
             <p class="help is-danger" v-show="errors.has('name')">{{ errors.first('name') }}</p>
           </div>
@@ -44,12 +44,13 @@
           <div class="field">
             <p class="control">
 
-              <button v-on:click="gpSubmit" class="button is-primary is-large">
+              <button :disabled="errors.any()" v-on:click="gpSubmit" class="button is-primary is-large">
                     <span class="icon">
                       <i class="fa fa-home"></i>
                     </span>
                     <span>Continue</span>
-                  </button>
+              </button>
+              
             </p>
           </div>
 
