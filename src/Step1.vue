@@ -1,74 +1,78 @@
 <template>
+<section class="section">
 
-  <section class="section">
-
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          <progress class="progress is-primary" value="33" max="100">30%</progress>
-        </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <progress class="progress is-primary" value="33" max="100">30%</progress>
       </div>
     </div>
+  </div>
 
-    <div class="container">
-      <div class="columns">
-        <div class="column">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
 
-          <form  @submit.prevent id="formoid" method="post">
+        <form @submit.prevent id="formoid" method="post">
 
-            <div class="field">
-              <label class="label">Name</label>
-              <p class="control">
-                <input class="input" type="text" placeholder="Jane" v-model="userStore.name">
-              </p>
-            </div>
 
-            <div class="field">
-              <label class="label">Username</label>
-              <p class="control">
-                <input class="input" type="text" placeholder="Doe" value="bulma" v-model="userStore.surname">
-              </p>
-            </div>
+          <div class="field">
+            <label class="label">Name</label>
+            <p class="control">
+              <input v-validate="'required'" class="input" type="text" placeholder="Jane" v-model="userStore.name" name="name">
+            </p>
+            <p class="help is-danger" v-show="errors.has('name')">{{ errors.first('name') }}</p>
+          </div>
 
-            <div class="field">
-              <label class="label">Email</label>
-              <p class="control">
-                <input class="input" type="text" placeholder="janedoe@gmail.com" value="hello@" v-model="userStore.email">
-              </p>
-            </div>
+          <div class="field">
+            <label class="label">Username</label>
+            <p class="control">
+              <input v-validate="'required'" class="input" type="text" placeholder="Doe" v-model="userStore.surname" name="surname">
+            </p>
+            <p class="help is-danger" v-show="errors.has('surname')">{{ errors.first('surname') }}</p>
+          </div>
 
-            <div class="field">
-              <p class="control">
+          <div class="field">
+            <label class="label">Email</label>
+            <p class="control">
+              <input v-validate="'required|email'" class="input" type="text" placeholder="janedoe@gmail.com" value="hello@" v-model="userStore.email" name="email">
+              <p class="help is-danger" v-show="errors.has('email')">{{ errors.first('email') }}</p>
+            </p>
+          </div>
 
-                  <button v-on:click="gpSubmit"  class="button is-primary is-large">
+
+          <div class="field">
+            <p class="control">
+
+              <button v-on:click="gpSubmit" class="button is-primary is-large">
                     <span class="icon">
                       <i class="fa fa-home"></i>
                     </span>
                     <span>Continue</span>
                   </button>
-              </p>
-            </div>
+            </p>
+          </div>
 
-          </form>
+        </form>
 
-        </div>
       </div>
     </div>
+  </div>
 
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          {{userStore}}
-        </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        {{userStore}}
       </div>
     </div>
+  </div>
 
-  </section>
-
+</section>
 </template>
 
 <script>
 export default {
+
   computed: {
     userStore() {
       return this.$store.state.userStore
@@ -76,8 +80,9 @@ export default {
   },
   methods: {
     gpSubmit: function() {
-      console.log('User: ', this.userStore );
+      console.log('User: ', this.userStore);
       this.$router.push('step2')
+      console.log(this.emailValue);
     }
   }
 }

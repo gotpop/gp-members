@@ -9,7 +9,9 @@ import Step2 from './Step2.vue'
 import Step3 from './Step3.vue'
 import Summary from './Summary.vue'
 import {store} from './store'
+import VeeValidate from 'vee-validate'
 
+Vue.use(VeeValidate)
 Vue.use(VueRouter)
 
 const routes = [
