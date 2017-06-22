@@ -17,27 +17,30 @@
           <div class="field">
             <label class="label">Address</label>
             <p class="control">
-              <input class="input" type="text" placeholder="10 Sample House" v-model="userStore.address1">
+              <input v-validate="'required'" class="input" type="text" placeholder="10 Sample House" v-model="userStore.address1" name="address1" autofocus>
             </p>
+            <p class="help is-danger" v-show="errors.has('address1')">{{ errors.first('address1') }}</p>
           </div>
 
           <div class="field">
             <label class="label">Address</label>
             <p class="control">
-              <input class="input" type="text" placeholder="Sample street" v-model="userStore.address2">
+              <input v-validate="'required'" class="input" type="text" placeholder="Sample street" v-model="userStore.address2" name="address2">
             </p>
+            <p class="help is-danger" v-show="errors.has('address2')">{{ errors.first('address2') }}</p>
           </div>
 
           <div class="field">
             <label class="label">Postcode</label>
             <p class="control">
-              <input class="input" type="text" placeholder="N1 5DS" v-model="userStore.postcode">
+              <input v-validate="'required'" class="input" type="text" placeholder="N1 5DS" v-model="userStore.postcode" name="postcode">
             </p>
+            <p class="help is-danger" v-show="errors.has('postcode')">{{ errors.first('postcode') }}</p>
           </div>
 
           <div class="field">
             <p class="control">
-              <button v-on:click="gpSubmit" class="button is-primary is-large">
+              <button :disabled="errors.any()" v-on:click="gpSubmit" class="button is-primary is-large">
                 <span class="icon">
                   <i class="fa fa-home"></i>
                 </span>

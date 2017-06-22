@@ -19,7 +19,7 @@
           <div class="field">
             <label class="label">Name</label>
             <p class="control">
-              <input v-validate="'required'" class="input" type="text" placeholder="Jane" v-model="userStore.name" name="name" autofocus>
+              <input v-on:change="isValid" v-validate="'required'" class="input" type="text" placeholder="Jane" v-model="userStore.name" name="name" autofocus>
             </p>
             <p class="help is-danger" v-show="errors.has('name')">{{ errors.first('name') }}</p>
           </div>
@@ -35,7 +35,7 @@
           <div class="field">
             <label class="label">Email</label>
             <p class="control">
-              <input v-validate="'required|email'" class="input" type="text" placeholder="janedoe@gmail.com" value="hello@" v-model="userStore.email" name="email">
+              <input v-validate="'required|email'" class="input" type="email" placeholder="janedoe@gmail.com" value="hello@" v-model="userStore.email" name="email">
               <p class="help is-danger" v-show="errors.has('email')">{{ errors.first('email') }}</p>
             </p>
           </div>
@@ -44,13 +44,20 @@
           <div class="field">
             <p class="control">
 
-              <button :disabled="errors.any()" v-on:click="gpSubmit" class="button is-primary is-large">
+              <button :disabled="buttonDisabled" v-on:click="gpSubmit" class="button is-primary is-large">
+                <span>Continue</span>
                     <span class="icon">
                       <i class="fa fa-home"></i>
                     </span>
-                    <span>Continue</span>
               </button>
-              
+
+              <button v-on:click="hideDebug = !hideDebug" class="button is-primary is-large">
+                <span>Toggle debug</span>
+                    <span class="icon">
+                      <i class="fa fa-home"></i>
+                    </span>
+              </button>
+
             </p>
           </div>
 
@@ -60,7 +67,9 @@
     </div>
   </div>
 
-  <div class="container">
+{{buttonDisabled}}
+
+  <div class="container" v-show="hideDebug">
     <div class="columns">
       <div class="column">
         {{userStore}}
@@ -73,7 +82,12 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      buttonDisabled: true,
+      hideDebug: false
+    }
+  },
   computed: {
     userStore() {
       return this.$store.state.userStore
@@ -84,6 +98,13 @@ export default {
       console.log('User: ', this.userStore);
       this.$router.push('step2')
       console.log(this.emailValue);
+    },
+    isValid: function() {
+      console.log('changed', this.errors.any());
+       //
+      //  if (!this.errors.any()) {
+      //    this.buttonDisabled = false
+      //  }
     }
   }
 }

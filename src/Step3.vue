@@ -19,16 +19,17 @@
             <label class="label">Subject</label>
             <p class="control">
               <span class="select">
-                <select v-model="userStore.list">
+                <select v-model="userStore.list" name="select" autofocus>
                   <option v-for="type in contactTypes">{{ type.contactType }}</option>
                 </select>
               </span>
             </p>
+            <p class="help is-danger" v-show="errors.has('select')">{{ errors.first('select') }}</p>
           </div>
 
           <div class="field">
             <p class="control">
-              <button v-on:click="gpSubmit" class="button is-primary is-large">
+              <button disabled v-on:click="gpSubmit" class="button is-primary is-large">
                 <span class="icon">
                   <i class="fa fa-home"></i>
                 </span>
