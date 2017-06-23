@@ -13,6 +13,15 @@ export const store = new Vuex.Store({
       address2: '',
       postcode: '',
       list: ''
+    },
+    serverUserObject: {
+      name: '',
+      surname: '',
+      email: '',
+      address1: '',
+      address2: '',
+      postcode: '',
+      list: ''
     }
   }
 })

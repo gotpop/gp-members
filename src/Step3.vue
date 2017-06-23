@@ -32,7 +32,7 @@
                 <span class="icon">
                   <i class="fa fa-home"></i>
                 </span>
-                <span>Submit</span>
+                <span>Continue</span>
               </button>
             </p>
           </div>
@@ -66,10 +66,14 @@ export default {
   computed: {
     userStore() {
       return this.$store.state.userStore
+    },
+    serverUserObject() {
+      return this.$store.state.serverUserObject
     }
   },
   methods: {
     gpSubmit: function() {
+
 
       let sendObject = JSON.stringify(this.userStore)
 
@@ -79,6 +83,8 @@ export default {
       }).then(function(response) {
         return response.text().then(function(text) {
           console.log(text);
+          // this.serverUserObject = text
+          this.serverUserObject.postcode = 'yellow'
         });
       });
 

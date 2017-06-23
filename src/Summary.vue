@@ -20,6 +20,7 @@
   </div>
 </section>
 
+
 </template>
 
 
@@ -28,6 +29,9 @@ export default {
   computed: {
     userStore() {
       return this.$store.state.userStore
+    },
+    serverUserObject() {
+      return this.$store.state.serverUserObject
     }
   },
   methods: {
