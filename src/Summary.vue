@@ -22,27 +22,29 @@
             <th>Name</th>
             <th>Value</th>
           </thead>
-          <tr>
-            <td>Name</td><td>{{serverUserObject.name}}</td>
-          </tr>
-          <tr>
-            <td>Surname</td><td>{{serverUserObject.surname}}</td>
-          </tr>
-          <tr>
-            <td>Email</td><td>{{serverUserObject.email}}</td>
-          </tr>
-          <tr>
-            <td>Address1</td><td>{{serverUserObject.address1}}</td>
-          </tr>
-          <tr>
-            <td>Address1</td><td>{{serverUserObject.address2}}</td>
-          </tr>
-          <tr>
-            <td>Postcode</td><td>{{serverUserObject.postcode}}</td>
-          </tr>
-          <tr>
-            <td>List</td><td>{{serverUserObject.list}}</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td>Name</td><td>{{serverUserObject.name}}</td>
+            </tr>
+            <tr>
+              <td>Surname</td><td>{{serverUserObject.surname}}</td>
+            </tr>
+            <tr>
+              <td>Email</td><td>{{serverUserObject.email}}</td>
+            </tr>
+            <tr>
+              <td>Address1</td><td>{{serverUserObject.address1}}</td>
+            </tr>
+            <tr>
+              <td>Address1</td><td>{{serverUserObject.address2}}</td>
+            </tr>
+            <tr>
+              <td>Postcode</td><td>{{serverUserObject.postcode}}</td>
+            </tr>
+            <tr>
+              <td>List</td><td>{{serverUserObject.list}}</td>
+            </tr>
+          </tbody>
         </table>
 
 
