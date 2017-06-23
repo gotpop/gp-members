@@ -1,8 +1,9 @@
 <template>
-<section class="section">
+<div>
 
   <gp-hero></gp-hero>
 
+  <section class="section">
     <div class="container">
 
       <router-link to="/step1" class="button is-primary is-large">
@@ -13,6 +14,7 @@
       </router-link>
 
     </div>
+  </section>
 
-</section>
+</div>
 </template>
