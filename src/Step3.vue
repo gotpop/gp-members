@@ -74,21 +74,27 @@ export default {
   methods: {
     gpSubmit: function() {
 
-
       let sendObject = JSON.stringify(this.userStore)
 
       fetch("api/user", {
         method: "POST",
         body: sendObject
-      }).then(function(response) {
-        return response.text().then(function(text) {
-          console.log(text);
-          // this.serverUserObject = text
-          this.serverUserObject.postcode = 'yellow'
-        });
-      });
+      }).then(doThis.bind(this))
 
-      console.log('User object: ', this.userStore);
+      function doThis(response) {
+        return response.text().then(thenThis.bind(this));
+      }
+
+      function thenThis(text) {
+        let parseString = JSON.parse(text)
+        this.serverUserObject.address1 = parseString.address1
+        this.serverUserObject.address2 = parseString.address2
+        this.serverUserObject.email = parseString.email
+        this.serverUserObject.list = parseString.list
+        this.serverUserObject.name = parseString.name
+        this.serverUserObject.postcode = parseString.postcode
+        this.serverUserObject.surname = parseString.surname
+      }
       this.$router.push('summary')
     }
   }
