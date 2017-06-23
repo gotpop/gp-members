@@ -17,7 +17,7 @@
           <div class="field">
             <label class="label">Address</label>
             <p class="control">
-              <input v-validate="'required'" class="input" type="text" placeholder="10 Sample House" v-model="userStore.address1" name="address1" autofocus>
+              <input v-validate="'required|min:3'" class="input" type="text" placeholder="10 Sample House" v-model="userStore.address1" name="address1" autofocus>
             </p>
             <p class="help is-danger" v-show="errors.has('address1')">{{ errors.first('address1') }}</p>
           </div>
@@ -54,13 +54,6 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        {{userStore}}
-      </div>
-    </div>
-  </div>
 </section>
 </template>
 
@@ -74,9 +67,20 @@ export default {
   },
   methods: {
     gpSubmit: function() {
-      console.log('User: ', this.userStore );
       this.$router.push('step3')
+      console.log('User: ', this.userStore);
+    },
+    validateBeforeSubmit() {
+      this.$validator.validateAll().then(() => {
+        // eslint-disable-next-line
+        // this.$router.push('step3')
+        alert('From Submitted!');
+      }).catch(() => {
+        // eslint-disable-next-line
+        alert('Correct them errors!');
+      });
     }
+
   }
 }
 </script>

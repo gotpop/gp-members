@@ -24,16 +24,15 @@
                 </select>
               </span>
             </p>
-            <p class="help is-danger" v-show="errors.has('select')">{{ errors.first('select') }}</p>
           </div>
 
           <div class="field">
             <p class="control">
-              <button disabled v-on:click="gpSubmit" class="button is-primary is-large">
+              <button v-on:click="gpSubmit" class="button is-primary is-large">
                 <span class="icon">
                   <i class="fa fa-home"></i>
                 </span>
-                <span>Continue</span>
+                <span>Submit</span>
               </button>
             </p>
           </div>
@@ -44,13 +43,6 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        {{userStore}}
-      </div>
-    </div>
-  </div>
 </section>
 </template>
 

@@ -19,7 +19,7 @@
           <div class="field">
             <label class="label">Name</label>
             <p class="control">
-              <input v-on:change="isValid" v-validate="'required'" class="input" type="text" placeholder="Jane" v-model="userStore.name" name="name" autofocus>
+              <input v-validate="'required|min:3'" class="input" type="text" v-model="userStore.name" name="name">
             </p>
             <p class="help is-danger" v-show="errors.has('name')">{{ errors.first('name') }}</p>
           </div>
@@ -27,7 +27,7 @@
           <div class="field">
             <label class="label">Username</label>
             <p class="control">
-              <input v-validate="'required'" class="input" type="text" placeholder="Doe" v-model="userStore.surname" name="surname">
+              <input v-on:change="isValid" v-validate="'required|min:3'" class="input" type="text" placeholder="Doe" v-model="userStore.surname" name="surname">
             </p>
             <p class="help is-danger" v-show="errors.has('surname')">{{ errors.first('surname') }}</p>
           </div>
@@ -35,7 +35,7 @@
           <div class="field">
             <label class="label">Email</label>
             <p class="control">
-              <input v-validate="'required|email'" class="input" type="email" placeholder="janedoe@gmail.com" value="hello@" v-model="userStore.email" name="email">
+              <input v-on:change="isValid" v-validate="'required|email'" class="input" type="email" placeholder="janedoe@gmail.com" value="hello@" v-model="userStore.email" name="email">
               <p class="help is-danger" v-show="errors.has('email')">{{ errors.first('email') }}</p>
             </p>
           </div>
@@ -51,13 +51,6 @@
                     </span>
               </button>
 
-              <button v-on:click="hideDebug = !hideDebug" class="button is-primary is-large">
-                <span>Toggle debug</span>
-                    <span class="icon">
-                      <i class="fa fa-home"></i>
-                    </span>
-              </button>
-
             </p>
           </div>
 
@@ -67,15 +60,6 @@
     </div>
   </div>
 
-{{buttonDisabled}}
-
-  <div class="container" v-show="hideDebug">
-    <div class="columns">
-      <div class="column">
-        {{userStore}}
-      </div>
-    </div>
-  </div>
 
 </section>
 </template>
@@ -85,7 +69,6 @@ export default {
   data() {
     return {
       buttonDisabled: true,
-      hideDebug: false
     }
   },
   computed: {
@@ -95,16 +78,19 @@ export default {
   },
   methods: {
     gpSubmit: function() {
-      console.log('User: ', this.userStore);
+      // console.log('User: ', this.userStore);
       this.$router.push('step2')
-      console.log(this.emailValue);
+      // console.log(this.emailValue);
     },
     isValid: function() {
-      console.log('changed', this.errors.any());
-       //
-      //  if (!this.errors.any()) {
-      //    this.buttonDisabled = false
-      //  }
+
+      if (this.errors.any() == false) {
+        this.buttonDisabled = false
+      } else if (this.errors.any() == true) {
+        this.buttonDisabled = true
+      }
+
+
     }
   }
 }
