@@ -11,7 +11,7 @@
           <div class="field">
             <label class="label">Name</label>
             <p class="control">
-              <input v-validate="'required|min:3'" class="input" type="text" v-model="userStore.name" name="name" autofocus>
+              <input v-validate="'required|min:3'" class="input" type="text" v-model="userStore.name" name="name" placeholder="Jane" autofocus>
             </p>
             <p class="help is-danger" v-show="errors.has('name')">{{ errors.first('name') }}</p>
           </div>
@@ -32,17 +32,14 @@
             </p>
           </div>
 
-
           <div class="field">
             <p class="control">
-
               <button v-on:click="validateBeforeSubmit" class="button is-success is-large">
                 <span>Continue</span>
                     <span class="icon">
                       <i class="fa fa-arrow-right"></i>
                     </span>
               </button>
-
             </p>
           </div>
 
