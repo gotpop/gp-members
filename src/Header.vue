@@ -15,8 +15,8 @@
     </div>
     <span v-on:click="toggleOpen = !toggleOpen" class="nav-toggle">
       <span></span>
-      <span></span>
-      <span></span>
+    <span></span>
+    <span></span>
     </span>
     <div v-bind:class="{ 'is-active': toggleOpen }" class="nav-right nav-menu">
       <router-link to="/" class="nav-item is-tab is-hidden-tablet is-active">Home</router-link>
@@ -26,9 +26,9 @@
       <router-link to="/summary" class="nav-item is-tab is-hidden-tablet">Summary</router-link>
       <a href="https://github.com/gotpop/gp-members" class="nav-item is-tab">
         <span class="icon">
-          <i class="fa fa-star"></i>
+          <i class="fa fa-github"></i>
         </span>
-        <span>GitHub</span>
+        <span>View project on GitHub</span>
       </a>
     </div>
   </div>
@@ -47,3 +47,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.nav {
+    flex: 1 1 100%;
+}
+</style>

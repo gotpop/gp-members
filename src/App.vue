@@ -4,11 +4,21 @@
   <transition name="fade">
    <router-view></router-view>
  </transition>
+ <gp-footer></gp-footer>
 </div>
 </template>
 
 <style lang="scss">
 @import '~bulma';
+
+
+  .wrap-site {    
+    min-height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    /* align-content: stretch; */
+  }
 
 .fade-enter-active, .fade-leave-active {
   transition: opacity .6s

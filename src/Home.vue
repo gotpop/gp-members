@@ -1,5 +1,5 @@
 <template>
-<div>
+<main class="main">
 
   <gp-hero></gp-hero>
 
@@ -16,5 +16,12 @@
     </div>
   </section>
 
-</div>
+</main>
 </template>
+
+
+<style lang="scss">
+.main {
+    flex: 1 1 100%;
+}
+</style>

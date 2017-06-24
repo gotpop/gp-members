@@ -4,14 +4,6 @@
   <div class="container">
     <div class="columns">
       <div class="column">
-        <progress class="progress is-primary" value="33" max="100">30%</progress>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="columns">
-      <div class="column">
 
         <form @submit.prevent id="formoid" method="post">
 
@@ -95,3 +87,10 @@ export default {
   }
 }
 </script>
+
+
+<style lang="scss">
+.section {
+    flex: 1 1 100%;
+}
+</style>

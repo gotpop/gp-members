@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Header from './Header.vue'
+import Footer from './Footer.vue'
 import Hero from './Hero.vue'
 import VueRouter from 'vue-router'
 import Home from './Home.vue'
@@ -51,6 +52,7 @@ const router =  new VueRouter({
 })
 
 Vue.component('gp-header', Header);
+Vue.component('gp-footer', Footer);
 Vue.component('gp-hero', Hero);
 
 let gp = new Vue({

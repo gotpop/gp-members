@@ -86,3 +86,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.section {
+  flex: 1 1 100%;
+}
+</style>
