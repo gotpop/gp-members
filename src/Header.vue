@@ -8,10 +8,10 @@
         </span>
         <span>GotPop Members</span>
       </router-link>
-      <router-link v-show="validPages.page1 == true" to="/step1" class="nav-item is-tab is-hidden-mobile">Step 1</router-link>
-      <router-link v-show="validPages.page2 == true" to="/step2" class="nav-item is-tab is-hidden-mobile">Step 2</router-link>
-      <router-link v-show="validPages.page3 == true" to="/step3" class="nav-item is-tab is-hidden-mobile">Step 3</router-link>
-      <router-link v-show="validPages.page3 == true" to="/summary" class="nav-item is-tab is-hidden-mobile">Summary</router-link>
+      <router-link v-if="validPages.step1" to="/step1" class="nav-item is-tab is-hidden-mobile">Step 1</router-link>
+      <router-link v-if="validPages.step2" to="/step2" class="nav-item is-tab is-hidden-mobile">Step 2</router-link>
+      <router-link v-if="validPages.step3" to="/step3" class="nav-item is-tab is-hidden-mobile">Step 3</router-link>
+      <router-link v-if="validPages.page3" to="/summary" class="nav-item is-tab is-hidden-mobile">Summary</router-link>
     </div>
     <span v-on:click="toggleOpen = !toggleOpen" class="nav-toggle">
       <span></span>
