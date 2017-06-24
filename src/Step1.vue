@@ -11,7 +11,7 @@
           <div class="field">
             <label class="label">Name</label>
             <p class="control">
-              <input v-validate="'required|min:3'" class="input" type="text" v-model="userStore.name" name="name">
+              <input v-on:change="isValid" v-validate="'required|min:3'" class="input" type="text" v-model="userStore.name" name="name">
             </p>
             <p class="help is-danger" v-show="errors.has('name')">{{ errors.first('name') }}</p>
           </div>
@@ -27,7 +27,7 @@
           <div class="field">
             <label class="label">Email</label>
             <p class="control">
-              <input v-on:change="isValid" v-validate="'required|email'" class="input" type="email" placeholder="janedoe@gmail.com" value="hello@" v-model="userStore.email" name="email">
+              <input v-on:change="isValid" v-validate="'required|email|min:3'" class="input" type="email" placeholder="janedoe@gmail.com" value="hello@" v-model="userStore.email" name="email">
               <p class="help is-danger" v-show="errors.has('email')">{{ errors.first('email') }}</p>
             </p>
           </div>
