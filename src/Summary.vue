@@ -1,5 +1,5 @@
 <template>
-<section class="section">
+<section class="main main-content section">
   <div class="container">
 
     <div class="columns">
@@ -86,9 +86,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.section {
-  flex: 1 1 100%;
-}
-</style>

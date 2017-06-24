@@ -1,7 +1,7 @@
 <template>
-<section class="section">
+<section class="main main-form section">
 
-  <div class="container">
+  <div class="form-wrap container">
     <div class="columns">
       <div class="column">
 
@@ -90,7 +90,6 @@ export default {
 
 
 <style lang="scss">
-.section {
-    flex: 1 1 100%;
-}
+
+
 </style>

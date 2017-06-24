@@ -2,57 +2,78 @@
 <div class="wrap-site">
   <gp-header></gp-header>
   <transition name="fade">
-   <router-view></router-view>
- </transition>
- <gp-footer></gp-footer>
+    <router-view></router-view>
+  </transition>
+  <gp-footer></gp-footer>
 </div>
 </template>
 
 <style lang="scss">
 @import '~bulma';
 
-
-  .wrap-site {    
+.wrap-site {
     min-height: 100vh;
     display: flex;
-    /* flex-direction: column; */
     flex-wrap: wrap;
-    /* align-content: stretch; */
-  }
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .6s
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-  opacity: 0
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition-property: opacity;
-  transition-duration: .25s;
+.main {
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    min-height: calc(100vh - 52px);
+    flex-wrap: wrap;
+    &-content {
+        display: block;
+    }
+    &-form {
+        align-items: center;
+    }
+    & .container {
+        flex: 1 1 100%;
+    }
+}
+
+.form-wrap {
+    max-width: 600px;
+    flex: 1 1 100%;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.6s;
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition-property: opacity;
+    transition-duration: 0.25s;
 }
 
 .fade-enter-active {
-  transition-delay: .25s;
+    transition-delay: 0.25s;
 }
 
-.fade-enter, .fade-leave-active {
-  opacity: 0
+.fade-enter,
+.fade-leave-active {
+    opacity: 0;
 }
 
-
-/* Enter and leave animations can use different */
-/* durations and timing functions.              */
 .slide-fade-enter-active {
-  transition: all .3s ease;
+    transition: all 0.3s ease;
 }
 .slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    transition: all 0.8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active for <2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
+
+.slide-fade-enter,
+.slide-fade-leave-to {
+    transform: translateX(10px);
+    opacity: 0;
 }
 
 .nav-item a.is-tab.router-link-exact-active,
