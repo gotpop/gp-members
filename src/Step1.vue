@@ -36,7 +36,7 @@
           <div class="field">
             <p class="control">
 
-              <button :disabled="errors.any()" v-on:click="gpSubmit" class="button is-success is-large">
+              <button v-on:click="validateBeforeSubmit" class="button is-success is-large">
                 <span>Continue</span>
                     <span class="icon">
                       <i class="fa fa-arrow-right"></i>
@@ -72,19 +72,19 @@ export default {
     }
   },
   methods: {
-    gpSubmit: function() {
-      this.$router.push('step2')
-    },
-    isValid: function() {
+    validateBeforeSubmit() {
+      this.$validator.validateAll().then(() => {
 
-      if (this.errors.any() == false) {
         this.buttonDisabled = false
         this.validPages.step1 = true
-      } else if (this.errors.any() == true) {
+        this.$router.push('step2')
+
+      }).catch(() => {
+
         this.buttonDisabled = true
         this.validPages.step1 = false
-      }
 
+      });
     }
   }
 }
