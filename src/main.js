@@ -20,12 +20,12 @@ const config = {
   locale: 'en',
   dictionary: null,
   strict: true,
-  enableAutoClasses: false,
+  enableAutoClasses: true,
   classNames: {
     touched: 'touched', // the control has been blurred
     untouched: 'untouched', // the control hasn't been blurred
-    valid: 'valid', // model is valid
-    invalid: 'invalid', // model is invalid
+    valid: 'is-success', // model is valid
+    invalid: 'is-danger', // model is invalid
     pristine: 'pristine', // control has not been interacted with
     dirty: 'dirty' // control has been interacted with
   },

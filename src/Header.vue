@@ -8,10 +8,10 @@
         </span>
         <span>GotPop Members</span>
       </router-link>
-      <router-link to="/step1" class="nav-item is-tab is-hidden-mobile">Step 1</router-link>
-      <router-link to="/step2" class="nav-item is-tab is-hidden-mobile">Step 2</router-link>
-      <router-link to="/step3" class="nav-item is-tab is-hidden-mobile">Step 3</router-link>
-      <router-link to="/summary" class="nav-item is-tab is-hidden-mobile">Summary</router-link>
+      <router-link v-show="validPages.page1 == true" to="/step1" class="nav-item is-tab is-hidden-mobile">Step 1</router-link>
+      <router-link v-show="validPages.page2 == true" to="/step2" class="nav-item is-tab is-hidden-mobile">Step 2</router-link>
+      <router-link v-show="validPages.page3 == true" to="/step3" class="nav-item is-tab is-hidden-mobile">Step 3</router-link>
+      <router-link v-show="validPages.page3 == true" to="/summary" class="nav-item is-tab is-hidden-mobile">Summary</router-link>
     </div>
     <span v-on:click="toggleOpen = !toggleOpen" class="nav-toggle">
       <span></span>
@@ -42,8 +42,10 @@ export default {
       toggleOpen: false,
     }
   },
-  methods: {
-
+  computed: {
+    validPages() {
+      return this.$store.state.validPages
+    }
   }
 }
 </script>
@@ -53,9 +55,9 @@ export default {
     flex: 1 1 100%;
 }
 .nav-item-github .icon {
-  margin-left: 1rem;
+    margin-left: 1rem;
 }
 .nav-item-logo .icon {
-  margin-right: 1rem;
+    margin-right: 1rem;
 }
 </style>
