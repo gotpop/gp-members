@@ -20,11 +20,11 @@
 
           <div class="field">
             <p class="control">
-              <button v-on:click="gpSubmit" class="button is-primary is-large">
-                <span class="icon">
-                  <i class="fa fa-home"></i>
-                </span>
+              <button v-on:click="gpSubmit" class="button is-success is-large">
                 <span>Continue</span>
+                <span class="icon">
+                    <i class="fa fa-arrow-right"></i>
+                </span>
               </button>
             </p>
           </div>

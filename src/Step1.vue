@@ -36,10 +36,10 @@
           <div class="field">
             <p class="control">
 
-              <button :disabled="buttonDisabled" v-on:click="gpSubmit" class="button is-primary is-large">
+              <button :disabled="buttonDisabled" v-on:click="gpSubmit" class="button is-success is-large">
                 <span>Continue</span>
                     <span class="icon">
-                      <i class="fa fa-home"></i>
+                      <i class="fa fa-arrow-right"></i>
                     </span>
               </button>
 

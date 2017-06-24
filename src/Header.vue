@@ -2,11 +2,11 @@
 <nav class="nav has-shadow">
   <div class="container">
     <div class="nav-left">
-      <router-link to="/" class="nav-item is-tab is-hidden-mobile">
+      <router-link to="/" class="nav-item nav-item-logo is-tab is-hidden-mobile">
         <span class="icon">
-          <i class="fa fa-star"></i>
+          <i class="fa fa-fire"></i>
         </span>
-        <span>Home</span>
+        <span>GotPop Members</span>
       </router-link>
       <router-link to="/step1" class="nav-item is-tab is-hidden-mobile">Step 1</router-link>
       <router-link to="/step2" class="nav-item is-tab is-hidden-mobile">Step 2</router-link>
@@ -24,7 +24,7 @@
       <router-link to="/step2" class="nav-item is-tab is-hidden-tablet">Step 2</router-link>
       <router-link to="/step3" class="nav-item is-tab is-hidden-tablet">Step 3</router-link>
       <router-link to="/summary" class="nav-item is-tab is-hidden-tablet">Summary</router-link>
-      <a href="https://github.com/gotpop/gp-members" class="nav-item is-tab">
+      <a href="https://github.com/gotpop/gp-members" class="nav-item nav-item-github is-tab">
         <div>View project on GitHub</div>
         <span class="icon">
           <i class="fa fa-github"></i>
@@ -51,5 +51,11 @@ export default {
 <style lang="scss">
 .nav {
     flex: 1 1 100%;
+}
+.nav-item-github .icon {
+  margin-left: 1rem;
+}
+.nav-item-logo .icon {
+  margin-right: 1rem;
 }
 </style>
