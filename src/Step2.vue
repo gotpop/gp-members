@@ -56,29 +56,15 @@ export default {
   computed: {
     userStore() {
       return this.$store.state.userStore
+    },
+    validPages() {
+      return this.$store.state.validPages
     }
   },
   methods: {
     gpSubmit: function() {
       this.$router.push('step3')
-      console.log('User: ', this.userStore);
-
-    },
-    validateBeforeSubmit() {
-      this.$validator.validateAll().then(() => {
-        // eslint-disable-next-line
-        // this.$router.push('step3')
-        alert('From Submitted!');
-      }).catch(() => {
-        // eslint-disable-next-line
-        alert('Correct them errors!');
-      });
     }
-
   }
 }
 </script>
-
-<style lang="scss">
-
-</style>

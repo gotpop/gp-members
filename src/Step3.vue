@@ -59,6 +59,9 @@ export default {
     userStore() {
       return this.$store.state.userStore
     },
+    validPages() {
+      return this.$store.state.validPages
+    },
     serverUserObject() {
       return this.$store.state.serverUserObject
     }
@@ -92,7 +95,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-
-</style>

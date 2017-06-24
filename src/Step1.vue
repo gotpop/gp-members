@@ -66,22 +66,24 @@ export default {
   computed: {
     userStore() {
       return this.$store.state.userStore
+    },
+    validPages() {
+      return this.$store.state.validPages
     }
   },
   methods: {
     gpSubmit: function() {
-      // console.log('User: ', this.userStore);
       this.$router.push('step2')
-      // console.log(this.emailValue);
     },
     isValid: function() {
 
       if (this.errors.any() == false) {
         this.buttonDisabled = false
+        this.validPages.step1 = true
       } else if (this.errors.any() == true) {
         this.buttonDisabled = true
+        this.validPages.step1 = false
       }
-
 
     }
   }

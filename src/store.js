@@ -22,6 +22,11 @@ export const store = new Vuex.Store({
       address2: '',
       postcode: '',
       list: ''
+    },
+    validPages: {
+      step1: false,
+      step2: false,
+      step3: false
     }
   }
 })
