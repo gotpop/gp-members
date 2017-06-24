@@ -10,7 +10,7 @@
           <div class="field">
             <label class="label">Address</label>
             <p class="control">
-              <input v-on:change="isValid" v-validate="'required|min:3'" class="input" type="text" placeholder="10 Sample House" v-model="userStore.address1" name="address1" autofocus>
+              <input v-validate="'required|min:3'" class="input" type="text" placeholder="10 Sample House" v-model="userStore.address1" name="address1" autofocus>
             </p>
             <p class="help is-danger" v-show="errors.has('address1')">{{ errors.first('address1') }}</p>
           </div>
@@ -18,7 +18,7 @@
           <div class="field">
             <label class="label">Address</label>
             <p class="control">
-              <input v-on:change="isValid" v-validate="'required|min:3'" class="input" type="text" placeholder="Sample street" v-model="userStore.address2" name="address2">
+              <input v-validate="'required|min:3'" class="input" type="text" placeholder="Sample street" v-model="userStore.address2" name="address2">
             </p>
             <p class="help is-danger" v-show="errors.has('address2')">{{ errors.first('address2') }}</p>
           </div>
@@ -26,14 +26,14 @@
           <div class="field">
             <label class="label">Postcode</label>
             <p class="control">
-              <input v-on:change="isValid" v-validate="'required|min:3'" class="input" type="text" placeholder="N1 5DS" v-model="userStore.postcode" name="postcode">
+              <input v-validate="'required|min:3'" class="input" type="text" placeholder="N1 5DS" v-model="userStore.postcode" name="postcode">
             </p>
             <p class="help is-danger" v-show="errors.has('postcode')">{{ errors.first('postcode') }}</p>
           </div>
 
           <div class="field">
             <p class="control">
-              <button :disabled="buttonDisabled" v-on:click="gpSubmit" class="button is-success is-large">
+              <button :disabled="errors.any()" v-on:click="gpSubmit" class="button is-success is-large">
                 <span>Continue</span>
                 <span class="icon">
                     <i class="fa fa-arrow-right"></i>
