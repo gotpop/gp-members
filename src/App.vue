@@ -37,6 +37,7 @@
 .form-wrap {
     max-width: 600px;
     flex: 1 1 100%;
+    margin-bottom: 52px;
 }
 
 .fade-enter-active,

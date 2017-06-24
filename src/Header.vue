@@ -25,10 +25,10 @@
       <router-link to="/step3" class="nav-item is-tab is-hidden-tablet">Step 3</router-link>
       <router-link to="/summary" class="nav-item is-tab is-hidden-tablet">Summary</router-link>
       <a href="https://github.com/gotpop/gp-members" class="nav-item is-tab">
+        <div>View project on GitHub</div>
         <span class="icon">
           <i class="fa fa-github"></i>
         </span>
-        <span>View project on GitHub</span>
       </a>
     </div>
   </div>
