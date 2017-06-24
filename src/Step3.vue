@@ -89,18 +89,8 @@ export default {
         this.serverUserObject.postcode = parseString.postcode
         this.serverUserObject.surname = parseString.surname
       }
+      this.validPages.step3 = true
       this.$router.push('summary')
-    },
-    isValid: function() {
-
-      if (this.errors.any() == false) {
-        this.buttonDisabled = false
-        this.validPages.step1 = true
-      } else if (this.errors.any() == true) {
-        this.buttonDisabled = true
-        this.validPages.step1 = false
-      }
-
     }
   }
 }
