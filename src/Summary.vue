@@ -13,11 +13,9 @@
     </div>
   </div>
 
-
   <div class="container">
     <div class="columns">
       <div class="column">
-
 
         <table class="table is-striped is-bordered">
           <thead>
@@ -56,13 +54,11 @@
           </tbody>
         </table>
 
-
       </div>
     </div>
   </div>
 </section>
 </template>
-
 
 <script>
 export default {

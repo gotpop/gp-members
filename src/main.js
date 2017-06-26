@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import Vue from 'vue'
 import App from './App.vue'
 import Header from './Header.vue'
@@ -14,7 +15,7 @@ import VeeValidate from 'vee-validate'
 
 
 const config = {
-  errorBagName: 'errors', // change if property conflicts.
+  errorBagName: 'errors',
   fieldsBagName: 'fields',
   delay: 0,
   locale: 'en',
@@ -22,12 +23,12 @@ const config = {
   strict: true,
   enableAutoClasses: true,
   classNames: {
-    touched: 'touched', // the control has been blurred
-    untouched: 'untouched', // the control hasn't been blurred
-    valid: 'is-success', // model is valid
-    invalid: 'is-danger', // model is invalid
-    pristine: 'pristine', // control has not been interacted with
-    dirty: 'dirty' // control has been interacted with
+    touched: 'touched',
+    untouched: 'untouched',
+    valid: 'is-success',
+    invalid: 'is-danger',
+    pristine: 'pristine',
+    dirty: 'dirty' 
   },
   events: 'input|blur',
   inject: true
