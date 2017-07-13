@@ -41,7 +41,7 @@
   },
   "main": "server.js",
   "engines": {
-    "node": "6.11.0",
+    "node": "v6.11.1",
     "npm": "3.9.5"
   }
 }
